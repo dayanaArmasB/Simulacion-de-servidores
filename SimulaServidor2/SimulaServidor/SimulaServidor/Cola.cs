@@ -7,68 +7,94 @@ using ElementType = System.Int64;
 
 namespace SimulaServidor {
 
-    class Cola {
-		private Node first;
-		private Node last;
+    public class Node<T>
+    {
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
+        public Node<T> Prev { get; set; }
 
-		private class Node {
-			public ElementType data;
-			public Node next, prev;
+        public Node(T data)
+        {
+            Data = data;
+            Next = null;
+            Prev = null;
+        }
+    }
 
-			public Node(ElementType i) { // Node constructor
-				data = i;
-				next = null;
-				prev = null;
-			}
+    public class Cola<T>
+    {
+        private Node<T> first;
+        private Node<T> last;
+        private int size = 0;
 
-		};
+        public Cola()
+        {
+            first = null;
+            last = null;
+        }
 
-		public Cola() {
-			first = null;
-			last = null;
-		}
+        // Añadir un elemento al final de la cola
+        public void Enqueue(T item)
+        {
+            Node<T> newNode = new Node<T>(item);
 
-		//Add to the back of the queue
-		public void Enqueue() {
-			Node nPtr = new Node(10);
-			Node predPtr = first;
+            if (first == null)
+            { // Si la cola está vacía
+                first = newNode;
+                last = newNode;
+            }
+            else
+            { // Añadir al final
+                last.Next = newNode;
+                newNode.Prev = last;
+                last = newNode;
+            }
+            size++;
+        }
 
-			if (first == null) { //Insert if queue is empty
-				nPtr.next = first;
-				nPtr.prev = first;
-				first = nPtr;
-			} else {
-				while (predPtr.next != null) {
-					predPtr = predPtr.next;
-				}
-				nPtr.prev = predPtr;
-				nPtr.next = predPtr.next;
-				predPtr.next = nPtr;
-			}
+        // Eliminar un elemento del inicio de la cola
+        public T Dequeue()
+        {
+            if (first == null)
+            {
+                throw new InvalidOperationException("La cola está vacía.");
+            }
 
-			last = nPtr; //Set last to new pointer}
-		}
-		//Remove from the front of the queue
-		public void Dequeue() {
-			Node dPtr = first;
-			first = first?.next;
-		}
+            T data = first.Data;
+            first = first.Next;
 
-		//Returns the front of the queue
-		public ElementType Front() {
-			Node ptr = first;
-			return ptr.data;
-		}
+            if (first == null)
+            { // Si la cola quedó vacía
+                last = null;
+            }
+            else
+            {
+                first.Prev = null;
+            }
+            size--;
+            return data;
+        }
 
-		//Return size of the queue
-		public int GetSize() {
-			int mySize = 0;
-			Node ptr = first;
-			while (ptr != null) {
-				ptr = ptr.next;
-				mySize++;
-			}
-			return mySize;
-		}
-	}
+        // Obtener el primer elemento de la cola
+        public T Front()
+        {
+            if (first == null)
+            {
+                throw new InvalidOperationException("La cola está vacía.");
+            }
+            return first.Data;
+        }
+
+        // Obtener el tamaño de la cola
+        public int GetSize()
+        {
+            return size;
+        }
+
+        // Verificar si la cola está vacía
+        public bool IsEmpty()
+        {
+            return size == 0;
+        }
+    }
 }
