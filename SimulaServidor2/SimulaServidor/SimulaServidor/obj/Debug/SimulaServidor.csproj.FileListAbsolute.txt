@@ -19,3 +19,10 @@ C:\Users\User\Downloads\SimulaServidor\SimulaServidor\SimulaServidor\obj\Debug\S
 C:\Users\User\Downloads\SimulaServidor\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.csproj.CoreCompileInputs.cache
 C:\Users\User\Downloads\SimulaServidor\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.exe
 C:\Users\User\Downloads\SimulaServidor\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.pdb
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\bin\Debug\SimulaServidor.exe.config
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\bin\Debug\SimulaServidor.exe
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\bin\Debug\SimulaServidor.pdb
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.csproj.AssemblyReference.cache
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.csproj.CoreCompileInputs.cache
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.exe
+D:\dev\net\desktop\Simulacion-de-servidores\SimulaServidor2\SimulaServidor\SimulaServidor\obj\Debug\SimulaServidor.pdb
